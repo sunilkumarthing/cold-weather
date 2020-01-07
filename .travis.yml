@@ -11,4 +11,4 @@ script:
 
 deploy:
   provider: script
-  script: docker push $USERNAME/python-app
+  script: ./deploy.sh
