@@ -3,12 +3,15 @@ os: linux
 services:
  - docker
 
-install:
- - docker login -u $USERNAME -p $PASSWORD 
+# install:
+#  - docker login -u $USERNAME -p $PASSWORD 
 
+# script:
+#   - docker image build -t $USERNAME/python-app .
 script:
-  - docker image build -t $USERNAME/python-app .
+  - echo "Hello World"
 
 deploy:
-  provider: script
-  script: bash deploy.sh
+  provider: heroku
+  app: flask-app-sunil
+  api_key: $HEROKU_API_KEY
